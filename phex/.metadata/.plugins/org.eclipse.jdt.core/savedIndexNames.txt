@@ -1,0 +1,10 @@
+INDEX VERSION 1.126+C:\Users\CityCraft\Documents\MCRWG\phex\.metadata\.plugins\org.eclipse.jdt.core
+2148399235.index
+3474049034.index
+1127794297.index
+4032570881.index
+3317582387.index
+1456066560.index
+1756197442.index
+459399910.index
+1966616386.index
