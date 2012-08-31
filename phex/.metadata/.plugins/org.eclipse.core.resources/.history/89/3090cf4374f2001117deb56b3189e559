@@ -1,0 +1,61 @@
+package phex.main;
+
+import static org.lwjgl.opengl.GL11.*;
+import org.lwjgl.opengl.*;
+import org.lwjgl.*;
+import org.lwjgl.input.Mouse;
+import org.lwjgl.input.Keyboard;;
+
+public class Phex {
+	
+	public Phex()
+	{
+		try {
+			Display.setDisplayMode(new DisplayMode(800, 650));
+			Display.setTitle("Phex Launcher");
+			Display.setResizable(true);
+			Display.create();
+		} catch (LWJGLException e) {
+			e.printStackTrace();
+			Display.destroy();
+			System.exit(1);
+		}
+		//Initialisation code(OpenGL)
+		glMatrixMode(GL_PROJECTION);
+		glLoadIdentity(); // Resets any previous projection matrices
+		glOrtho(0, 800, 650, 0, 1, -1);
+		glMatrixMode(GL_MODELVIEW);
+		
+		
+		while(!Display.isCloseRequested())
+		{
+			//render
+			
+			if(Keyboard.isKeyDown(Keyboard.KEY_ESCAPE))
+			{
+				Display.destroy();
+				System.exit(0);
+			}
+			
+			glBegin(GL_QUADS);
+				glVertex2i(100, 100);
+				glVertex2i(700, 100);
+				glVertex2i(700, 600);
+				glVertex2i(100, 600);
+			glEnd();
+			
+			Display.update();
+			Display.sync(60);
+		}
+		
+		Display.destroy();
+	}
+
+	
+	
+	public static void main(String args[])
+	{
+		new Phex();
+	}
+
+}

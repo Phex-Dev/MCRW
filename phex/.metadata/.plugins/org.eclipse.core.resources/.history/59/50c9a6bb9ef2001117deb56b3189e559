@@ -1,0 +1,19 @@
+package phex.main;
+
+import java.awt.Button;
+import java.awt.Frame;
+
+public class LoginButton extends Frame{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	LoginButton()
+	{
+		 add("East",  new Button ("-East-"));
+         pack();
+	}
+
+}
